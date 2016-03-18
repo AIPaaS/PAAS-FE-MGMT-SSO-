@@ -92,7 +92,7 @@ public class ExternalOperationMvc {
 	 * @return
 	 */
 	@RequestMapping("/verifyModuCode")
-	public @ResponseBody String verifyModuId(HttpServletRequest request, HttpServletResponse response,
+	public @ResponseBody String verifyModuCode(HttpServletRequest request, HttpServletResponse response,
 			 Long opId, String moduCode) {	
 		
 		boolean verifyResult=  SysFrameUtil.verifyModuCode(opId, moduCode);	
@@ -100,6 +100,21 @@ public class ExternalOperationMvc {
 		return String.valueOf(verifyResult);
 	}
 	
+	
+	/**
+	 * 验证用户是否具有指定模块的权限
+	 * @param opId : 用户ID
+	 * @param moduId : 被验证的模块Id
+	 * @return
+	 */
+	@RequestMapping("/verifyModuId")
+	public @ResponseBody String verifyModuId(HttpServletRequest request, HttpServletResponse response,
+			 Long opId, Long moduId) {	
+		
+		boolean verifyResult=  SysFrameUtil.verifyModuId(opId, moduId);	
+		
+		return String.valueOf(verifyResult);
+	}
 	
 	
 }
