@@ -7,8 +7,10 @@ import javax.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.aic.paas.csso.svc.ExternalOperationSvc;
+import com.aic.paas.frame.util.SysFrameUtil;
 import com.binary.core.io.support.ByteArrayResource;
 import com.binary.framework.util.ControllerUtils;
 import com.binary.sso.server.Constant;
@@ -83,7 +85,20 @@ public class ExternalOperationMvc {
 	}
 	
 	
-	
+	/**
+	 * 验证用户是否具有指定模块的权限
+	 * @param opId : 用户ID
+	 * @param moduId : 被验证的模块Code
+	 * @return
+	 */
+	@RequestMapping("/verifyModuCode")
+	public @ResponseBody String verifyModuId(HttpServletRequest request, HttpServletResponse response,
+			 Long opId, String moduCode) {	
+		
+		boolean verifyResult=  SysFrameUtil.verifyModuCode(opId, moduCode);	
+		
+		return String.valueOf(verifyResult);
+	}
 	
 	
 	
