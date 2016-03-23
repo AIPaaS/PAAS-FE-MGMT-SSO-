@@ -59,16 +59,16 @@ String ContextPath = request.getContextPath();
 </div>
 <div class="input-group">
 <span class="input-group-addon"><i class="fa fa-user"></i></span>
-<input class="form-control" id="fm-login-id" name="fm-login-id" type="text" placeholder="登录名">
+<input class="form-control" id="fm-login-id" name="fm-login-id" type="text" title="登录名" placeholder="登录名">
 </div>
 <div class="input-group">
 <span class="input-group-addon"><i class="fa fa-key"></i></span>
-<input type="password" class="form-control" id="fm-login-password" name="fm-login-password" placeholder="登录密码">
+<input type="password" class="form-control" id="fm-login-password" name="fm-login-password" title="登录密码" placeholder="登录密码">
 </div>
 
 <div class="input-group col-xs-7 pull-left">
 <span class="input-group-addon"><i class="fa fa-qrcode"></i></span>
-<input class="form-control" type="text" id="captchaCode" name="captchaCode" placeholder="验证码">
+<input class="form-control" type="text" id="captchaCode" name="captchaCode" title="验证码" placeholder="验证码">
 </div>
 <div class="input-group col-xs-5 pull-left">
 <img id="img_captcha" class="form-control" src="###" style="cursor:pointer">
